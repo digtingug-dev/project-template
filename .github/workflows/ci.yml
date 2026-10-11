@@ -25,21 +25,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Inspect setup script
-        run: |
-          echo "=== Numbered script ==="
-          nl -ba ./scripts/setup.sh
-          echo "=== File type ==="
-          file ./scripts/setup.sh
-          echo "=== Git line endings ==="
-          git ls-files --eol scripts/setup.sh
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
       - name: Set up project
         run: |
           if [ ! -f "./scripts/setup.sh" ]; then
