@@ -14,8 +14,8 @@ jobs:
 
     steps:
       - name: Check for ADO task reference
-      if: github.actor != 'dependabot[bot]'
-      uses: JJ/github-pr-contains-action@releases/v14
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        bodyContains: "AB#"
+        if: github.actor != 'dependabot[bot]'
+        uses: JJ/github-pr-contains-action@releases/v14
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          bodyContains: "AB#"
